@@ -16,12 +16,12 @@ namespace WebApplication2.Models
             salesDal.SaveChanges();
             return e;
         }
-        //public List<Employee> GetEmployees()
-        //{
-        //    SalesERPDAL salesDal = new SalesERPDAL();
+        public List<Employee> GetEmployees()
+        {
+          SalesERPDAL salesDal = new SalesERPDAL();
 
-        //    return salesDal.Employees.ToList();
-        //}
+           return salesDal.Employees.ToList();
+        }
           
     }
 }

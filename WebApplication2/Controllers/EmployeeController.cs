@@ -10,28 +10,20 @@ namespace WebApplication2.Controllers
 {
     public class EmployeeController : Controller
     {
-        public ActionResult  SaveEmployee(Employee e,string BtnSubmit)
+        public ActionResult SaveEmployee(Employee e, string BtnSubmit)
         {
-            switch(BtnSubmit)
+            switch (BtnSubmit)
             {
                 case "Save Employee":
-                   if(ModelState.IsValid)
-                    {
-                        EmployeeBusinessLayer empBal = new EmployeeBusinessLayer();
-                        empBal.SaveEmployee(e);
-                        return RedirectToAction("Index");
-                    }
-                    else
-                    {
-                        return View("CreateEmployee");
-                    }
-                    
+                    EmployeeBusinessLayer empBal = new EmployeeBusinessLayer();
+                    empBal.SaveEmployee(e);
+                    return RedirectToAction("Index");
                 case "Cancel":
                     return RedirectToAction("Index");
             }
             return new EmptyResult();
         }
-        public ActionResult AddNew()
+            public ActionResult AddNew()
         {
             return View("CreateEmployee");
         }
